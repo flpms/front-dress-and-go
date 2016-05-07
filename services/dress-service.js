@@ -3,11 +3,11 @@
 function DressService($q, $http) {
 
     this.getDresses = function() {
-        return $http.get('http://192.168.0.10:3001/api/dresses');
+        return $http.get('http://localhost:3001/api/dresses');
     };
 
     this.getDress = function(id) {
-        return $http.get('http://192.168.0.10:3001/api/dress/' + id);
+        return $http.get('http://localhost:3001/api/dress/' + id);
     };
 
     this.postDress = function(dress) {
@@ -20,20 +20,20 @@ function DressService($q, $http) {
             dress.size = Number(dress.size);
         }
 
-        return $http.post('http://192.168.0.10:3001/api/dress/', dress);
+        return $http.post('http://localhost:3001/api/dress/', dress);
     };
 
     this.deleteDress = function(dress) {
         return $http({
             method: 'DELETE',
-            url: 'http://192.168.0.10:3001/api/dress/' + dress.id,
+            url: 'http://localhost:3001/api/dress/' + dress.id,
         });
     };
 
     this.updateDress = function(id, infoDress) {
         return $http({
             method: 'PATCH',
-            url: 'http://192.168.0.10:3001/api/dress/' + id,
+            url: 'http://localhost:3001/api/dress/' + id,
             data: infoDress
         });
     }
