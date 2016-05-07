@@ -1,0 +1,31 @@
+{
+  "name": "front-dress-and-go",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/flpms/front-dress-and-go.git"
+  },
+  "author": "Filipe Silva",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/flpms/front-dress-and-go/issues"
+  },
+  "homepage": "https://github.com/flpms/front-dress-and-go#readme",
+  "devDependencies": {
+    "connect": "^3.4.1",
+    "eslint": "^2.9.0",
+    "serve-static": "^1.10.2",
+    "uglify-js": "^2.6.2"
+  },
+  "dependencies": {
+    "@angular/router": "^0.2.0",
+    "angular": "^1.5.5",
+    "angular-input-masks": "^2.3.0",
+    "moment": "^2.13.0"
+  }
+}
