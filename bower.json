@@ -1,0 +1,20 @@
+{
+  "name": "front-dress-and-go",
+  "description": "",
+  "main": "app.js",
+  "authors": [
+    "Filipe Silva"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/flpms/front-dress-and-go",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-input-masks": "^2.3.0"
+  }
+}
