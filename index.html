@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <base href="/">
+        <title></title>
+        <link rel="stylesheet" href="assets/css/app.css">
+        <link href='https://fonts.googleapis.com/css?family=Lato:400,300' rel='stylesheet' type='text/css'>
+    </head>
+    <body ng-app="dressApp">
+        <div class="g-window">
+            <h1>Dress And Go - Admin</h1>
+            <app class="g-line"></app>
+        </div>
+
+        <script src="/node_modules/angular/angular.js"></script>
+        <script src="/node_modules/@angular/router/angular1/angular_1_router.js"></script>
+        <script src="/node_modules/moment/min/moment.min.js"></script>
+        <script src="/bower_components/angular-input-masks/angular-input-masks-standalone.min.js"></script>
+
+        <script src="./services/client-service.js"></script>
+        <script src="./services/dress-service.js"></script>
+        <script src="./services/rent-service.js"></script>
+
+        <script src="./component/client/client-register-controller.js"></script>
+        <script src="./component/client/client-update-controller.js"></script>
+        <script src="./component/client/client-component.js"></script>
+
+        <script src="./component/dress/dress-rent-controller.js"></script>
+        <script src="./component/dress/dress-register-controller.js"></script>
+        <script src="./component/dress/dress-update-controller.js"></script>
+        <script src="./component/dress/dress-component.js"></script>
+
+        <script src="./app.js"></script>
+    </body>
+</html>

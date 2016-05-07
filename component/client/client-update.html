@@ -1,0 +1,73 @@
+<div ng-if="$ctrl.client" class="block-11">
+    <p>Alterar cliente</p>
+    <form>
+        <div class="block-6">
+            <label>Nome</label>
+            <input type="text" ng-model="$ctrl.client.name" />
+        </div>
+
+        <div class="block-7">
+            <label>Email</label>
+            <input type="text" ng-model="$ctrl.client.email" />
+        </div>
+
+        <div class="block-3">
+            <label>Numero</label>
+            <input type="number" ng-model="$ctrl.client.addressNumber" />
+        </div>
+
+        <div class="block-3">
+            <label>Celular</label>
+            <input type="text" ng-model="$ctrl.client.cellPhone" ui-br-phone-number  />
+        </div>
+
+        <div class="block-3">
+            <label>Cidade</label>
+            <input type="text" ng-model="$ctrl.client.city" />
+        </div>
+
+        <div class="block-4">
+            <label>Estado</label>
+            <select ng-model="$ctrl.client.state"
+                ng-options="state.uf as state.name for state in $ctrl.states"></select>
+        </div>
+
+        <div class="block-3">
+            <label>Altura</label>
+            <input type="number" ng-model="$ctrl.client.height"/>
+        </div>
+
+        <div class="block-3">
+            <label>Busto</label>
+            <input type="number" ng-model="$ctrl.client.bust"/>
+        </div>
+
+        <div class="block-3">
+            <label>Quadril</label>
+            <input type="number" ng-model="$ctrl.client.hip"/>
+        </div>
+
+        <div class="block-3">
+            <label>Cintura</label>
+            <input type="number" ng-model="$ctrl.client.waist"/>
+        </div>
+
+        <div class="block-3">
+            <label>Salto</label>
+            <input type="number" ng-model="$ctrl.client.heelSize" />
+        </div>
+
+        <div class="block-3">
+            <label>Tamanho</label>
+            <select ng-model="$ctrl.client.size"
+                ng-options="size as size for size in $ctrl.sizes">
+            </select>
+        </div>
+        <div class="block-13">
+            <button ng-click="$ctrl.update($ctrl.client)" class="send">Atualizar</button>
+            <button ng-click="$ctrl.cancel()" class="cancel">Cancelar</button>
+        </div>
+    </form>
+</div>
+
+<ng-outlet></ng-outlet>

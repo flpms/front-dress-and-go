@@ -1,0 +1,128 @@
+<div class="block-11">
+    <p>Cadastro</p>
+    <form>
+        <div class="block-6">
+            <label>Nome</label>
+            <input type="text" ng-model="client.name" required/>
+        </div>
+
+        <div class="block-6">
+            <label>Email</label>
+            <input type="text" ng-model="client.email" required/>
+        </div>
+
+        <div class="block-6">
+            <label>Password</label>
+            <input type="password" ng-model="client.password" required/>
+        </div>
+
+        <div class="block-6">
+            <label>Celular</label>
+            <input type="text" ng-model="client.cellPhone" ui-br-phone-number required/>
+        </div>
+
+        <div class="block-6">
+            <label>Endereço</label>
+            <input type="text" ng-model="client.address" required/>
+        </div>
+
+        <div class="block-6">
+            <label>Number</label>
+            <input type="number" ng-model="client.number" required/>
+        </div>
+
+        <div class="block-5">
+            <label>Cidade</label>
+            <input type="text" ng-model="client.city" required/>
+        </div>
+
+        <div class="block-4">
+            <label>Estado</label>
+            <select ng-model="client.stateObj"
+                ng-options="state.name for state in $ctrl.states" required></select>
+        </div>
+
+        <div class="block-3">
+            <label>CEP</label>
+            <input type="text" ng-model="client.postalCode" ui-br-cep-mask required/>
+        </div>
+
+        <div class="block-3">
+            <label>Altura</label>
+            <input type="number" ng-model="client.height" required />
+        </div>
+
+        <div class="block-3">
+            <label>Busto</label>
+            <input type="number" ng-model="client.bust" required />
+        </div>
+
+        <div class="block-3">
+            <label>Quadril</label>
+            <input type="number" ng-model="client.hip" required />
+        </div>
+
+        <div class="block-3">
+            <label>Cintura</label>
+            <input type="number" ng-model="client.waist" required />
+        </div>
+
+        <div class="block-3">
+            <label>Salto</label>
+            <input type="number" ng-model="client.heelSize" required />
+        </div>
+
+        <div class="block-3">
+            <label>Tamanho</label>
+            <select ng-model="client.size" required>
+                <option>34</option>
+                <option>36</option>
+                <option>38</option>
+                <option>40</option>
+                <option>42</option>
+            </select>
+        </div>
+        <div class="block-13">
+            <button type="button" ng-click="$ctrl.register(client)" class="send">Cadastrar</button>
+        </div>
+    </form>
+</div>
+
+<div class="block-11">
+    <table class="info-table ">
+        <thead>
+            <tr>
+                <th class="line"></th>
+                <th class="line">Nome</th>
+                <th class="line">E-mail</th>
+                <th class="line">Celular</th>
+                <th class="line">Altura</th>
+                <th class="line">Busto</th>
+                <th class="line">Cintura</th>
+                <th class="line">Quadril</th>
+                <th class="line">Salto</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="client in $ctrl.clients">
+                <td class="line text-center">
+                    <span class="icon trash" ng-click="$ctrl.del(client)" title="Excluir"></span>
+                </td>
+                <td class="line text-center">
+                    <span class="edit">
+                        <a ng-link="['ClientUpdate', {email: client.email}]">{{client.name}}</a>
+                    </span>
+                </td>
+                <td class="line text-center">{{client.email}}</td>
+                <td class="line text-center">{{client.cellPhone}}</td>
+                <td class="line text-center">{{client.height}}</td>
+                <td class="line text-center">{{client.bust}}</td>
+                <td class="line text-center">{{client.hip}}</td>
+                <td class="line text-center">{{client.waist}}</td>
+                <td class="line text-center">{{client.heelSize}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<ng-outlet></ng-outlet>

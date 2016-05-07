@@ -1,0 +1,55 @@
+<div class="block-5">
+    <div class="rent-info">
+        <p><span class="text-bold">Modelo:</span> {{$ctrl.dress.model}}</p>
+        <p><span class="text-bold">Estilista:</span> {{$ctrl.dress.stylist}}</p>
+        <p><span class="text-bold">Cor:</span> {{$ctrl.dress.color}}</p>
+        <p><span class="text-bold">Altura:</span> {{$ctrl.dress.height}}</p>
+        <p><span class="text-bold">Tamanho:</span> {{$ctrl.dress.size}}</p>
+    </div>
+</div>
+
+<div class="block-8 rent">
+    <form>
+        <div class="block-8">
+            <label>Data da locação</label>
+            <input type="date" ng-model="$ctrl.rentData.bookingDate" required/>
+        </div>
+
+        <div class="block-8">
+            <label>Tempo de locação</label>
+            <select ng-model="$ctrl.rentData.devolutionDate" required>
+                <option>4</option>
+                <option>8</option>
+            </select>
+        </div>
+        <div class="block-8">
+            <textarea ng-model="$ctrl.rentData.obs"></textarea>
+        </div>
+    </form>
+
+    <div class="block-8">
+        <table class="info-table">
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>Celular</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="client in $ctrl.clients"
+                    ng-click="$ctrl.rentData.clientId = client.id"
+                    ng-class="{selected: $ctrl.isSelected(client) }">
+                    <td class="line text-center">{{client.name}}</td>
+                    <td class="line text-center">{{client.cellPhone}}</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="block-13">
+            <button class="send" ng-click="$ctrl.rent($ctrl.rentData)" ng-disabled="$ctrl.rentData.$invalid">Alugar</button>
+            <button class="cancel">Cancelar</button>
+        </div>
+    </div>
+
+    <div ng-if="$ctrl.rentData.order">Alugado</div>
+</div>

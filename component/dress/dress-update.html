@@ -1,0 +1,37 @@
+<div ng-if="$ctrl.dress" class="block-11">
+    <p>Editar vestido</p>
+    <form>
+        <div class="block-6">
+            <label>Modelo</label>
+            <input type="text" ng-model="$ctrl.dress.model" />
+        </div>
+
+        <div class="block-7">
+            <label>Estilista</label>
+            <input type="text" ng-model="$ctrl.dress.stylist" />
+        </div>
+
+        <div class="block-6">
+            <label>Cor</label>
+            <input type="text" ng-model="$ctrl.dress.color" />
+        </div>
+
+        <div class="block-4">
+            <label>Altura</label>
+            <input type="text" ng-model="$ctrl.dress.height" />
+        </div>
+        <div class="block-3">
+            <label>Tamanho</label>
+            <select ng-model="$ctrl.dress.size"
+                ng-options="size as size for size in $ctrl.sizes">
+            </select>
+        </div>
+
+        <div class="block-13">
+            <button ng-click="$ctrl.update($ctrl.dress)" class="send">Atualizar</button>
+            <button ng-click="$ctrl.cancel()" class="cancel">Cancelar</button>
+        </div>
+    </form>
+</div>
+
+<ng-outlet></ng-outlet>

@@ -1,0 +1,73 @@
+<div class="block-10">
+    <p>Cadastrar vestido</p>
+    <form>
+        <div class="block-6">
+            <label>Modelo</label>
+            <input type="text" ng-model="dress.model" />
+        </div>
+
+        <div class="block-7">
+            <label>Estilista</label>
+            <input type="text" ng-model="dress.stylist" />
+        </div>
+
+        <div class="block-6">
+            <label>Cor</label>
+            <input type="text" ng-model="dress.color" />
+        </div>
+
+        <div class="block-4">
+            <label>Altura</label>
+            <input type="number" ng-model="dress.height" />
+        </div>
+
+        <div class="block-3">
+            <label>Tamanho</label>
+            <select ng-model="dress.size">
+                <option>34</option>
+                <option>36</option>
+                <option>38</option>
+                <option>40</option>
+                <option>42</option>
+            </select>
+        </div>
+
+        <div class="block-13">
+            <button type="button" ng-click="$ctrl.register(dress)" class="send">Cadastrar</button>
+        </div>
+    </form>
+</div>
+<div class="block-11">
+    <table class="info-table">
+        <thead>
+            <tr>
+                <th></th>
+                <th>Modelo</th>
+                <th>Estilista</th>
+                <th>Tamanho</th>
+                <th>Cor</th>
+                <th>Altura</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="dress in $ctrl.dress">
+                <td class="line text-center">
+                    <span class="icon trash" ng-click="$ctrl.del(dress)" title="Excluir"></span>
+                </td>
+                <td class="line text-center">
+                    <a ng-link="['DressUpdate', {id: dress.id}]">{{dress.model}}</a>
+                </td>
+                <td class="line text-center">{{dress.stylist}}</td>
+                <td class="line text-center">{{dress.height}}</td>
+                <td class="line text-center">{{dress.color}}</td>
+                <td class="line text-center">{{dress.size}}</td>
+                <td class="line text-center">
+                    <a ng-link="['DressRent', {id: dress.id}]">Alugar</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<ng-outlet></ng-outlet>
